@@ -1,9 +1,9 @@
-using GestionPedidos;
 using System.Text.Json;
+using GestionPedidos;
 
-public abstract class AccesoADatos
+public static class AccesoADatos
 {
-    public bool ExisteArchivo(string rutaArchivo)
+    public static bool ExisteArchivo(string rutaArchivo)
     {
         if (File.Exists(rutaArchivo))
         {
@@ -23,82 +23,58 @@ public abstract class AccesoADatos
             return false;
         }
     }
-    public abstract void CargarListaCadetes(string rutaArchivo, List<Cadete> cadetes);
-    
-
-    public abstract Cadeteria CrearCadeteria(string rutaDatosCadeteria);
-    
-
-   
-
 }
 
-
-public class AccesoCSV : AccesoADatos
+public class AccesoADatosCadeteria
 {
-    
-
-    public override void CargarListaCadetes(string rutaArchivo, List<Cadete> cadetes)
+    public Cadeteria Obtener()
     {
-       if (ExisteArchivo(rutaArchivo))
-       {
-            using (var infoCadete = new StreamReader(rutaArchivo))
-            {
-                while (!infoCadete.EndOfStream)
-                {
-                    string linea = infoCadete.ReadLine();
-                    string[] datosCadete = linea.Split(';');
-
-                    int id = int.Parse(datosCadete[0]);
-                    string nombre = datosCadete[1];
-                    string direccion = datosCadete[2];
-                    long telefono = long.Parse(datosCadete[3]);
-
-                    cadetes.Add(new Cadete(id,nombre,direccion,telefono));
-                
-                }
-            }
-       }
-    }
-
-
-    public override Cadeteria CrearCadeteria(string rutaDatosCadeteria)
-    {
-       Cadeteria cadeteria = null;
-
-        if (ExisteArchivo(rutaDatosCadeteria))
+        Cadeteria cadeteria = null;
+        if (AccesoADatos.ExisteArchivo("DatosJson/cadeteria.json"))
         {
-            string[] linea = File.ReadAllLines(rutaDatosCadeteria);
-            string primeraLinea = linea[0];
-            string[] datosCadeteria = primeraLinea.Split(',');
-            string nombre = datosCadeteria[0];
-            long telefono = long.Parse(datosCadeteria[1]);
-            
-            cadeteria = new Cadeteria();
+            string TextoJson = File.ReadAllText("DatosJson/cadeteria.json");
+            cadeteria = JsonSerializer.Deserialize<Cadeteria>(TextoJson);
         }
-
         return cadeteria;
-        
     }
 }
 
 
-public class AccesoJSON : AccesoADatos
+
+public class AccesoADatosCadetes
 {
-    public override void CargarListaCadetes(string rutaArchivo, List<Cadete> cadetes){
-        
-        var jsonString = File.ReadAllText(rutaArchivo);
-        var listaDeserializada = JsonSerializer.Deserialize<List<Cadete>>(jsonString);
+    private string datosCadetes = "DatosJson/cadetes.json";
+    public List<Cadete> Obtener()
+    {
+        var cadetes = new List<Cadete>();
 
-        // Agregar los cadetes deserializados a la lista existente.
-        cadetes.AddRange(listaDeserializada);
+        if (AccesoADatos.ExisteArchivo(datosCadetes))
+        {
+            string TextoJson = File.ReadAllText(datosCadetes);
+            cadetes = JsonSerializer.Deserialize<List<Cadete>>(TextoJson);
+        }
+        return cadetes;
     }
-    
 
-    public override Cadeteria CrearCadeteria(string rutaDatosCadeteria){
-       
-        var jsonString = File.ReadAllText(rutaDatosCadeteria);
-        var cadeteria = JsonSerializer.Deserialize<Cadeteria>(jsonString);
-        return cadeteria;
+}
+public class AccesoADatosPedidos
+{
+    private string datosPedidos = "DatosJson/pedidos.json";
+    public List<Pedido> Obtener()
+    {
+        var pedidos = new List<Pedido>();
+        if (AccesoADatos.ExisteArchivo(datosPedidos))
+        {
+            string TextoJson = File.ReadAllText(datosPedidos);
+            pedidos = JsonSerializer.Deserialize<List<Pedido>>(TextoJson);
+        }
+        return pedidos;
     }
+
+    public void Guardar(List<Pedido> Pedidos)
+    {
+        string formatoJson = JsonSerializer.Serialize(Pedidos);
+        File.WriteAllText(datosPedidos, formatoJson);
+    }
+
 }

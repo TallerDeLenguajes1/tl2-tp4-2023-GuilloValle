@@ -12,7 +12,7 @@ public class CadeteriaCotroller : ControllerBase
     public CadeteriaCotroller(ILogger<CadeteriaCotroller> logger)
     {
         _logger = logger;
-        cadeteria = Cadeteria.INSTANCE;
+        cadeteria = Cadeteria.getCadeteria();
     }
 
     [HttpGet]
@@ -33,14 +33,20 @@ public class CadeteriaCotroller : ControllerBase
         return Ok(cadeteria.Cadetes);
     }
 
-    [HttpPost ("agregar pedidos")]
+   /*  [HttpPost ("agregar pedidos")]
     public ActionResult<Pedido> agregarPedido(string observacionPedido,string nombreCliente,string direccionCliente,long telefonoCliente, string datosReferencia, EstadoPedido estado){
         var pedido = new Pedido(cadeteria.Pedidos.Count()+1, observacionPedido, nombreCliente, direccionCliente,telefonoCliente, datosReferencia,estado);
         cadeteria.Pedidos.Add(pedido);
         return Ok(pedido);
+    } */
+
+    [HttpPost ("agregarPedidos")]
+    public ActionResult<Pedido> agregarPedido(Pedido nuevoPedido){
+        cadeteria.AgregarPedido(nuevoPedido);
+        return Ok(nuevoPedido);
     }
 
-    [HttpPut ("Asignar pedido")]
+    [HttpPut ("AsignarPedido")]
     public ActionResult<Pedido> asignarPedidos(int nroPedido, int idCadete){
 
         var p = cadeteria.AsignarCadeteAPedido(nroPedido, idCadete);
