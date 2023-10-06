@@ -152,5 +152,16 @@
             "Direccion": "strfdfdfdng",
             "Telefono": 1234
         }
+    },
+    {
+        "NroPedido": 15,
+        "ObservacionPedido": "Pedido 3 con swagger",
+        "Estado": 0,
+        "Cadete": {
+            "Id": 0,
+            "Nombre": "string",
+            "Direccion": "string",
+            "Telefono": 0
+        }
     }
 ]

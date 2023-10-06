@@ -4,10 +4,10 @@
         "ObservacionPedido": "Pedido 1: Productos variados",
         "Estado": 1,
         "Cadete": {
-            "Id": 1,
-            "Nombre": "Juan P\u00E9rez",
-            "Direccion": "Av. Santa Fe 1234, Buenos Aires",
-            "Telefono": 1123456789
+            "Id": 3,
+            "Nombre": "Pedro L\u00F3pez",
+            "Direccion": "Avenida de Mayo 9012, Buenos Aires",
+            "Telefono": 1145678901
         }
     },
     {
@@ -26,10 +26,10 @@
         "ObservacionPedido": "Pedido 3: Art\u00EDculos fr\u00E1giles",
         "Estado": 3,
         "Cadete": {
-            "Id": 1,
-            "Nombre": "Juan P\u00E9rez",
-            "Direccion": "Av. Santa Fe 1234, Buenos Aires",
-            "Telefono": 1123456789
+            "Id": 4,
+            "Nombre": "Ana Rodr\u00EDguez",
+            "Direccion": "Ruta 9 Km 123, Buenos Aires",
+            "Telefono": 1156789012
         }
     },
     {
@@ -57,7 +57,7 @@
     {
         "NroPedido": 6,
         "ObservacionPedido": "Pedido 6: Producto perecedero",
-        "Estado": 2,
+        "Estado": 3,
         "Cadete": {
             "Id": 0,
             "Nombre": "",
@@ -79,7 +79,7 @@
     {
         "NroPedido": 8,
         "ObservacionPedido": "Pedido 8: Regalo sorpresa",
-        "Estado": 4,
+        "Estado": 3,
         "Cadete": {
             "Id": 0,
             "Nombre": "",
@@ -90,7 +90,7 @@
     {
         "NroPedido": 9,
         "ObservacionPedido": "Pedido 9: Productos electr\u00F3nicos",
-        "Estado": 1,
+        "Estado": 0,
         "Cadete": {
             "Id": 0,
             "Nombre": "",
@@ -134,6 +134,28 @@
     {
         "NroPedido": 13,
         "ObservacionPedido": "Pedido desde swagger",
+        "Estado": 0,
+        "Cadete": {
+            "Id": 0,
+            "Nombre": "string",
+            "Direccion": "string",
+            "Telefono": 0
+        }
+    },
+    {
+        "NroPedido": 14,
+        "ObservacionPedido": "pedido 2 con swagger",
+        "Estado": 0,
+        "Cadete": {
+            "Id": 5,
+            "Nombre": "dsdsd",
+            "Direccion": "strfdfdfdng",
+            "Telefono": 1234
+        }
+    },
+    {
+        "NroPedido": 15,
+        "ObservacionPedido": "Pedido 3 con swagger",
         "Estado": 0,
         "Cadete": {
             "Id": 0,

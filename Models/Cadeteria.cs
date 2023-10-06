@@ -62,6 +62,24 @@ public class Cadeteria
         return nuevoPedido;
     }
 
+    public Pedido BuscarPedidoPorID(int id){
+        var pedido = pedidos.FirstOrDefault(pedido => pedido.NroPedido == id);
+        return pedido;
+    }
+
+    public Cadete BuscarCadetePorId(int id){
+        var cadete = cadetes.FirstOrDefault(cad => cad.Id == id);
+        return cadete;
+    }
+
+    public Cadete AgregarCadete(Cadete nuevoCadete)
+    {
+        cadetes.Add(nuevoCadete);
+        nuevoCadete.Id = cadetes.Count();
+        accesoADatosCadetes.Guardar(cadetes);
+        return nuevoCadete;
+    }
+
     public Pedido AsignarCadeteAPedido(int idPedido, int idCadete){
 
         var cad = cadetes.Find(cadete => cadete.Id == idCadete);
