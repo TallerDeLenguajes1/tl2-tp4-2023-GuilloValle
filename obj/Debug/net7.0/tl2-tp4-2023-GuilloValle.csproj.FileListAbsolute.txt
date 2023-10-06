@@ -31,3 +31,6 @@ C:\Users\Guillo\Desktop\taller2\tl2-tp4-2023-GuilloValle\obj\Debug\net7.0\refint
 C:\Users\Guillo\Desktop\taller2\tl2-tp4-2023-GuilloValle\obj\Debug\net7.0\tl2-tp4-2023-GuilloValle.pdb
 C:\Users\Guillo\Desktop\taller2\tl2-tp4-2023-GuilloValle\obj\Debug\net7.0\tl2-tp4-2023-GuilloValle.genruntimeconfig.cache
 C:\Users\Guillo\Desktop\taller2\tl2-tp4-2023-GuilloValle\obj\Debug\net7.0\ref\tl2-tp4-2023-GuilloValle.dll
+C:\Users\Guillo\Desktop\taller2\tl2-tp4-2023-GuilloValle\bin\Debug\net7.0\DatosJson\cadeteria.json
+C:\Users\Guillo\Desktop\taller2\tl2-tp4-2023-GuilloValle\bin\Debug\net7.0\DatosJson\cadetes.json
+C:\Users\Guillo\Desktop\taller2\tl2-tp4-2023-GuilloValle\bin\Debug\net7.0\DatosJson\pedidos.json

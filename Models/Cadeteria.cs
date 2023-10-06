@@ -33,12 +33,12 @@ public class Cadeteria
         
             if (instance == null)
             {
-               var AccesoADatosCadeteria = new AccesoADatosCadeteria();
-            instance = AccesoADatosCadeteria.Obtener();
-            instance.accesoADatosCadetes = new AccesoADatosCadetes();
-            instance.accesoADatosPedidos = new AccesoADatosPedidos();
-            instance.CargarPedidos();
-            instance.CargarCadetes();
+                var AccesoADatosCadeteria = new AccesoADatosCadeteria();
+                instance = AccesoADatosCadeteria.Obtener();
+                instance.accesoADatosCadetes = new AccesoADatosCadetes();
+                instance.accesoADatosPedidos = new AccesoADatosPedidos();
+                instance.CargarPedidos();
+                instance.CargarCadetes();
             }
             return instance;
         

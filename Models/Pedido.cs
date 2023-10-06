@@ -12,7 +12,7 @@ public class Pedido
     private int nroPedido;
     private string observacionPedido;
 
-    private Cliente cliente;
+    /* private Cliente cliente; */
 
     private EstadoPedido estado;
 
@@ -24,16 +24,19 @@ public class Pedido
     public EstadoPedido Estado { get => estado; set => estado = value; }
     public Cadete Cadete { get => cadete; set => cadete = value; }
 
+    public Pedido(){
+        
+    }
     public Pedido(int nroPedido, string observacionPedido,string nombreCliente,string direccionCliente,long telefonoCliente, string datosReferencia, EstadoPedido estado)
     {
         this.nroPedido = nroPedido;
         this.observacionPedido = observacionPedido;
-        this.cliente = new Cliente(nombreCliente,direccionCliente,telefonoCliente,datosReferencia);
+       /*  this.cliente = new Cliente(nombreCliente,direccionCliente,telefonoCliente,datosReferencia); */
         this.estado = estado;
         
     }
 
-    public void VerDireccionCliente()
+   /*  public void VerDireccionCliente()
     {
         Console.WriteLine("Dirección Cliente:"+ cliente.Direccion);
     }
@@ -45,7 +48,7 @@ public class Pedido
         Console.WriteLine("-Telefono:"+cliente.Telefono);
         Console.WriteLine("-Dirección:"+cliente.Direccion);
         Console.WriteLine("-Referencia:"+cliente.DatosReferenciaDireccion);
-    }
+    } */
 
 
 
