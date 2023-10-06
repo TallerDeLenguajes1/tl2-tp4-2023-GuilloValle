@@ -130,5 +130,16 @@
             "Direccion": "Avenida de Mayo 9012, Buenos Aires",
             "Telefono": 1145678901
         }
+    },
+    {
+        "NroPedido": 13,
+        "ObservacionPedido": "Pedido desde swagger",
+        "Estado": 0,
+        "Cadete": {
+            "Id": 0,
+            "Nombre": "string",
+            "Direccion": "string",
+            "Telefono": 0
+        }
     }
 ]
